@@ -1,19 +1,14 @@
-class MyPromise extends Promise {
-  success(resolve, reject) {
-    return this.then(resolve, reject);
-  }
-
-  failure(reject) {
-    return this.catch(reject);
+export let a = 10;
+export function func() {
+  return a;
+}
+export class Rectangle {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
   }
 }
-
-let pr = new MyPromise((resolve, reject) => {
-  resolve(42);
-});
-
-pr.success(value => {
-  console.log(value); // 42
-}).failure(err=> {
-  console.log(err.message);
-})
+function substract(num1, num2) {
+  return num1 - num2;
+}
+export {substract}; // 위에서 정의한 함수를 export
